@@ -1,0 +1,23 @@
+#services {
+    text-align: center;
+    padding: 50px;
+  }
+  
+  .service {
+    display: inline-block;
+    width: 30%;
+    margin: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
+  
+  img {
+    width: 100px;
+    border-radius: 50%;
+  }
+  
+  button {
+    background-color: #008000;
+    color: white;
+    padding: 10px 20px;
+  }
