@@ -1,0 +1,40 @@
+/* Styles */
+
+body {
+    font-family: Arial; 
+  }
+  
+  header {
+    background: #eee;
+    padding: 20px;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: center;
+  }
+  
+  nav a {
+    margin: 0 10px;
+  }
+  
+  .product {
+    display: inline-block;
+    text-align: center;
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+  } 
+  
+  button {
+    border: none;
+    background: #007bff;
+    color: white;
+    padding: 10px 20px;
+  }
+  
+  footer {
+    background: #eee;
+    padding: 10px;
+    text-align: center;
+  }
