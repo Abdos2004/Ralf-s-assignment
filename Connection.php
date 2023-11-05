@@ -1,12 +1,15 @@
 <?php
 
-$dbhost = "localhost";
-$dbuser = "root";
-$dbpass = "";
-$dbname = "wdt_project";
+$sname= "localhost";
+$unmae= "root";
+$password = "";
+$db_name = "GrowNet";
 
-if(!$con = mysqli_connect($dbhost,$dbuser,$dbpass,$dbname))
-{
+$conn = mysqli_connect($sname, $unmae, $password, $db_name);
 
-	die("failed to connect!");
+if (!$conn) {
+
+    echo "Connection failed!";
+
 }
+?>
