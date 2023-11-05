@@ -2,7 +2,7 @@
 
 session_start(); 
 
-include "dbConn.php";
+include "Connection.php";
 
 if (isset($_POST['uname']) && isset($_POST['psw'])) {
 

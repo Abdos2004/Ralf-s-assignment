@@ -1,84 +1,80 @@
 <?php 
-session_start();
 
-	include("connection.php");
-	include("functions.php");
+include "Connection.php";
+
+if (isset($_POST['newname']) && isset($_POST['confirmpsw'])) {
+
+    function validate($data){
+
+       $data = trim($data);
+
+       $data = stripslashes($data);
+
+       $data = htmlspecialchars($data);
+
+       return $data;
+
+    }
+
+    $newname = validate($_POST['newname']);
+
+    $confirmpsw = validate($_POST['confirmpsw']);
+
+    if (empty($newname)) {
+
+        header("Location: index.php?error=User Name is required");
+
+        exit();
+
+    }else if(empty($confirmpsw)){
+
+        header("Location: index.php?error=New password is required");
+
+        exit();
+
+    }else{
+
+        $sql = "SELECT * FROM userdata WHERE user_name='$newname'";
+
+        $result = mysqli_query($conn, $sql);
+
+        if (mysqli_num_rows($result) === 1) {
+
+            $row = mysqli_fetch_assoc($result);
+
+            if ($row['user_name'] === $newname ) {
+
+                echo '<script>alert("Username exist! Use another username.");
+            	window.location.href="index.php";</script>';
+
+                exit();
+
+            }
+
+        }else{
+			$sql = "INSERT INTO userdata (user_name,password) VALUES ('$newname', '$confirmpsw')";
+
+			if ($conn->query($sql) === TRUE) {
+			  echo '<script>alert("Proceed to Log In");
+			   window.location.href="index.php";</script>';
+			} else {
+			  echo "Error: " . $sql . "<br>" . $conn->error;
+			}
+
+            exit();
+
+        }
+
+    }
+
+}else{
+
+    header("Location: index.php");
+
+    exit();
+
+}
 
 
-	if($_SERVER['REQUEST_METHOD'] == "POST")
-	{
-		//something was posted
-		$user_name = $_POST['user_name'];
-		$password = $_POST['password'];
-
-		if(!empty($user_name) && !empty($password) && !is_numeric($user_name))
-		{
-
-			//save to database
-			$user_id = random_num(20);
-			$query = "insert into users (user_id,user_name,password) values ('$user_id','$user_name','$password')";
-
-			mysqli_query($con, $query);
-
-			header("Location: login.php");
-			die;
-		}else
-		{
-			echo "Please enter some valid information!";
-		}
-	}
+$mysqli -> close();
 ?>
-
-
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Signup</title>
-</head>
-<body>
-
-	<style type="text/css">
-	
-	#text{
-
-		height: 25px;
-		border-radius: 5px;
-		padding: 4px;
-		border: solid thin #aaa;
-		width: 100%;
-	}
-
-	#button{
-
-		padding: 10px;
-		width: 100px;
-		color: white;
-		background-color: lightblue;
-		border: none;
-	}
-
-	#box{
-
-		background-color: grey;
-		margin: auto;
-		width: 300px;
-		padding: 20px;
-	}
-
-	</style>
-
-	<div id="box">
-		
-		<form method="post">
-			<div style="font-size: 20px;margin: 10px;color: white;">Signup</div>
-
-			<input id="text" type="text" name="user_name"><br><br>
-			<input id="text" type="password" name="password"><br><br>
-
-			<input id="button" type="submit" value="Signup"><br><br>
-
-			<a href="login.php">Click to Login</a><br><br>
-		</form>
-	</div>
-</body>
-</html>
