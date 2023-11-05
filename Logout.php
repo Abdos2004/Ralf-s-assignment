@@ -1,12 +1,12 @@
-<?php
+<?php 
 
 session_start();
 
-if(isset($_SESSION['user_id']))
-{
-	unset($_SESSION['user_id']);
+session_unset();
 
-}
+session_destroy();
 
-header("Location: login.php");
-die;
+echo '<script>alert("Logged out successfully!");
+            	window.location.href="index.php";</script>';
+
+?>
