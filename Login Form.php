@@ -2,8 +2,8 @@
 
 session_start();
 
-	include("connection.php");
-	include("functions.php");
+	include "Connection.php";
+	include "functions.php";
 
 
 	if($_SERVER['REQUEST_METHOD'] == "POST")
@@ -44,10 +44,6 @@ session_start();
 	}
 
 ?>
-
-
-<!DOCTYPE html>
-<html>
 <head>
 	<title>Login</title>
 </head>
@@ -98,4 +94,4 @@ session_start();
 		</form>
 	</div>
 </body>
-</html>
+
