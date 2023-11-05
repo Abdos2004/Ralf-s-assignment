@@ -2,14 +2,116 @@
 <html lang="en">
 <head>
     <?php include 'includes/head.php'; ?>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knowledgebase</title>
+    <style>
+        /* Basic styling for the navigation bar */
+        header a{
+            text-decoration: none;
+            color: white;
+            
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: green;
+            --metal-tex: url(https://images.unsplash.com/photo-1501166222995-ff31c7e93cef?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NTcyMDc2NzU&ixlib=rb-1.2.1&q=80);
+        }
+
+        header {
+            background-color: rgb(101, 154, 21);
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 20px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        h1{
+            text-align: center;
+            color: white;
+        }
+
+        .main{
+            color: white;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: 20px;
+            margin-left: 100px;
+            margin-right: 100px;
+            margin-top: 40px;
+            text-align: justify;
+        }
+
+        .more{
+            position: relative;
+            text-align: center;
+            margin: 12vh auto;
+            color: transparent;
+            font-family: impact, sans-serif;
+            font-size: 100px;
+            letter-spacing: 0.05em;
+            background-image: var(--metal-tex);
+            background-size: cover;
+            background-clip: text;
+            -webkit-background-clip: text;
+        }
+        .texture,
+        .texture::after {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        }
+        
+        .texture {
+        background-image: linear-gradient(to bottom, blue, white 50%, red 65%, white);
+        background-attachment: fixed;
+        mix-blend-mode: color-dodge;
+        }
+
+        .texture::after {
+        content: '';
+        background-image: var(--metal-tex);
+        background-size: cover;
+        filter: saturate(0) brightness(0.8) contrast(4);
+        mix-blend-mode: multiply;
+        }
+    </style>
 </head>
 <body>
     <?php include 'includes/header.php'; ?>
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1>Knowledgebase</h1>
-                <p>Here are some information about agriculture, how to get started, equipment needed, and the nutritional value of vegetables:
+                <header>
+                    <h1><a href="/index.html">GrowNet</a></h1>
+                    <nav>
+                        <a href="/aboutus.html">About us</a>
+                        <a href="/knowledgebase.html">Knowledgebase</a>
+                        <a href="/services.html">Services</a>
+                        <a href="/shop.html">Shop</a>
+                        <a href="/Login Form.html">Login</a>
+                    </nav>
+                </header>
+                <h1 class="page_title">Knowledgebase</h1>
+                <p class="main">Here are some information about agriculture, how to get started, equipment needed, and the nutritional value of vegetables:<br>
                     Getting started in agriculture requires preparation and planning. First, decide what you want to grow - vegetables, grains, fruit or livestock. Research crops suited to your climate and with demand in your area. Acquire land and water access by purchasing, leasing or starting small in your backyard. Build any needed structures like greenhouses diligently following permit procedures.
                     Select quality, disease-resistant seeds and plant on schedule for your region’s growing season. Understand soil nutrition needs and use sustainable techniques like crop rotation, composting and integrated pest management. Plan for harvesting, storage and distribution logistics. Record data to inform future decisions.
                     Equipment needs vary by operation type and scale. Some common tools are tractors, tillers, seeders, cultivators, sprayers and harvesters. Invest in durable, powerful machines suited to your terrain. Hand tools like hoes, pruners and shovels are indispensible. Facilities like barns, fencing, irrigation and storage are also essential investments.
@@ -17,7 +119,7 @@
                     In summary, farming requires planning, preparation, equipment and hard work. But sustaining people with nutritious, fresh produce makes it deeply rewarding. Research and education are key for a successful, sustainable operation. With dedication, you can reap a bountiful harvest.
                     </p>
 
-                <p>More Coming soon...</p>
+                <p class="more">More Coming soon... <span class="texture"></span></p>
             </div>
         </div>
     </div>

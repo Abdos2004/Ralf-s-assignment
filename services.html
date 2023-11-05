@@ -2,35 +2,176 @@
 <html>
 <head>
   <title>Ag Tools Services</title>
-  
-  <link rel="stylesheet" type="text/css" href="styles.css">
+  <style>
+    /* Basic styling for the navigation bar */
+    h1 a{
+        text-decoration: none;
+        color: white;
+    }
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    header {
+        background-color: rgb(101, 154, 21);
+        color: #fff;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    nav {
+        display: flex;
+        justify-content: center;
+    }
+
+    nav a {
+        color: #fff;
+        text-decoration: none;
+        margin: 0 20px;
+    }
+
+    nav a:hover {
+        text-decoration: underline;
+    }
+    body{
+        background-color: green;
+    }
+
+    .page_title{
+        text-align: center;
+        font-size: 3em;
+        color: yellow;
+    }
+    
+    .img{
+        position: relative;
+        border-radius: 20px;
+    }
+
+    .tractor_img{
+        border-radius: 20px;
+        margin-left: 50px;
+        margin-top: 40px;
+    }
+
+    .service1_title{
+        color: white;
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .ser1{
+        color: white;
+        font-size: 16px;
+        padding: 20px;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* CSS */
+    .button-52 {
+        font-size: 16px;
+        font-weight: 200;
+        letter-spacing: 1px;
+        padding: 13px 20px 13px;
+        outline: 0;
+        border: 1px solid black;
+        cursor: pointer;
+        position: relative;
+        background-color: rgba(0, 0, 0, 0);
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        margin-left: 43%;
+        padding-bottom: 30px;
+    }
+
+    .button-52:after {
+        content: "";
+        background-color: #ffe54c;
+        width: 100%;
+        z-index: -1;
+        position: absolute;
+        height: 100%;
+        top: 7px;
+        left: 7px;
+        transition: 0.2s;
+    }
+
+    .button-52:hover:after {
+        top: 0px;
+        left: 0px;
+    }
+
+    @media (min-width: 768px) {
+    .button-52 {
+        padding: 13px 50px 13px;
+    }
+    }
+
+
+</style>
 
 </head>
 <body>
+    <header>
+        <h1><a href="/index.html">GrowNet</a></h1>
+        <nav>
+            <a href="/aboutus.html">About us</a>
+            <a href="/knowledgebase.html">Knowledgebase</a>
+            <a href="/services.html">Services</a>
+            <a href="/shop.html">Shop</a>
+            <a href="/Login Form.html">Login</a>
+        </nav>
+    </header>
 
   <section id="services">
 
-    <h2>Our Services</h2>
+    <h2 class="page_title">Our Services</h2>
     
     <div class="service">
-      <img src="tractor.png" alt="Tractor service">
-      <h3>Tractor Servicing</h3>
-      <p>We service all major tractor brands - schedule a maintenance checkup to keep your tractor running smoothly.</p>
-      <button>Learn More</button> 
+        <h3 class="service1_title">Tractor Servicing</h3>
+        <div class="container">
+            <img src="/tractor.png" alt="Tractor service"
+            width="400"
+            class="tractor_img">
+            <div class="ser1">
+                <p>We service all major tractor brands - schedule a maintenance checkup to keep your tractor running smoothly.</p>
+            </div>
+        </div>
+        <button class="button-52">Learn More</button> 
     </div>
 
     <div class="service">
-      <img src="tools.png" alt="Tools sharpening">
-      <h3>Tool Sharpening</h3>
-      <p>Keep your cutting tools razor sharp - we expertly sharpen and repair all gardening hand tools.</p>
-      <button>Learn More</button>
+        <h3 class="service1_title">Tool Sharpening</h3> 
+        <div class="container">   
+            <img src="/download.png" alt="Tools sharpening" class="img"
+            width="400">
+            <div class="ser1">
+                <p>Keep your cutting tools razor sharp - we expertly sharpen and repair all gardening hand tools.</p>
+            </div>
+        </div>
+        <button class="button-52">Learn More</button>
     </div>
 
     <div class="service">
-      <img src="irrigation.png" alt="Irrigation installation">
-      <h3>Irrigation Installation</h3>
-      <p>We design, install and repair water irrigation systems for farms, nurseries and greenhouses.</p>  
-      <button>Learn More</button>
+        <h3 class="service1_title">Irrigation Installation</h3>
+        <div class="container">
+            <img src="/irrigation.png" alt="Irrigation installation"
+            width="400" 
+            class="tractor_img">
+            <div class="ser1">
+                <p>We design, install and repair water irrigation systems for farms, nurseries and greenhouses.</p>  
+            </div>
+        </div>
+        <button class="button-52">Learn More</button>
     </div>
 
   </section>
